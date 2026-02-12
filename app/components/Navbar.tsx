@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion'
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -25,12 +26,15 @@ export default function Navbar() {
   ];
 
   return (
-    <nav
+    <motion.nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? 'bg-gradient-to-r from-white/95 via-gray-50/95 to-white/95 backdrop-blur-lg border-b border-gray-200 shadow-lg'
           : 'bg-gradient-to-r from-white/90 via-gray-50/90 to-white/90 backdrop-blur-md border-b border-gray-100/50'
       }`}
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
     >
       {/* Subtle pattern overlay for texture */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
@@ -42,31 +46,46 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 py-1 relative">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="#home" className="flex items-center space-x-2 relative z-10">
+          <motion.a 
+            href="#home" 
+            className="flex items-center space-x-2 relative z-10"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
             <img 
               src="/logo.png" 
               alt="Taskopedia - Talent for every task" 
-              className="h-32 w-auto transition-all duration-300 hover:scale-105"
+              className="h-32 w-auto transition-all duration-300"
             />
-          </a>
+          </motion.a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <a
+            {navLinks.map((link, index) => (
+              <motion.a
                 key={link.name}
                 href={link.href}
                 className="text-gray-800 hover:text-orange transition-colors duration-200 font-medium"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 * index }}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
               >
                 {link.name}
-              </a>
+              </motion.a>
             ))}
-            <a
+            <motion.a
               href="#pricing"
-              className="bg-orange hover:bg-orange-light text-white px-6 py-2 rounded-lg font-semibold transition-all duration-200 hover:scale-105 shadow-md hover:shadow-lg"
+              className="bg-orange hover:bg-orange-light text-white px-6 py-2 rounded-lg font-semibold transition-all duration-200 shadow-md hover:shadow-lg"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               Get Started
-            </a>
+            </motion.a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -94,28 +113,44 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 space-y-3 animate-fadeIn bg-white/50 backdrop-blur-sm rounded-lg p-4">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="block text-gray-800 hover:text-orange transition-colors duration-200 py-2 font-medium"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {link.name}
-              </a>
-            ))}
-            <a
-              href="#pricing"
-              className="block bg-orange hover:bg-orange-light text-white px-6 py-2 rounded-lg font-semibold text-center transition-all duration-200 shadow-md"
-              onClick={() => setIsMobileMenuOpen(false)}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div 
+              className="md:hidden mt-4 pb-4 space-y-3 bg-white/50 backdrop-blur-sm rounded-lg p-4"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
             >
-              Get Started
-            </a>
-          </div>
-        )}
+              {navLinks.map((link, index) => (
+                <motion.a
+                  key={link.name}
+                  href={link.href}
+                  className="block text-gray-800 hover:text-orange transition-colors duration-200 py-2 font-medium"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.3, delay: 0.1 * index }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  {link.name}
+                </motion.a>
+              ))}
+              <motion.a
+                href="#pricing"
+                className="block bg-orange hover:bg-orange-light text-white px-6 py-2 rounded-lg font-semibold text-center transition-all duration-200 shadow-md"
+                onClick={() => setIsMobileMenuOpen(false)}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.3, delay: 0.5 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Get Started
+              </motion.a>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
-    </nav>
-  );
+    </motion.nav>
+  )
 }
