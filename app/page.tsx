@@ -1,20 +1,26 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Footer from './components/Footer';
+import ScrollProgress from './components/ScrollProgress';
+import MotionSection, { MotionStagger, MotionStaggerItem } from './components/MotionSection';
 
 export default function Home() {
   return (
     <div className="bg-black text-white min-h-screen overflow-x-hidden w-full">
+      <ScrollProgress />
       <Navbar />
       <Hero />
 
       {/* Why Bangladesh Section */}
       <section id="why-bangladesh" className="px-6 py-20 max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center">
-          Why Bangladesh?
-        </h2>
+        <MotionSection animation="fade" delay={200}>
+          <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center">
+            Why Bangladesh?
+          </h2>
+        </MotionSection>
         
-        <div className="frost rounded-2xl p-8 md:p-12 mb-12 hover-lift">
+        <MotionSection animation="slide-up" delay={300}>
+          <div className="frost rounded-2xl p-8 md:p-12 mb-12 hover-lift">
           <h3 className="text-3xl font-bold mb-6 text-orange">
             A Young, Vibrant & English‑Speaking Workforce
           </h3>
@@ -42,9 +48,11 @@ export default function Home() {
               Competitive costs without compromising quality
             </li>
           </ul>
-        </div>
+          </div>
+        </MotionSection>
 
-        <div className="frost rounded-2xl p-8 md:p-12 hover-lift">
+        <MotionSection animation="slide-up" delay={400}>
+          <div className="frost rounded-2xl p-8 md:p-12 hover-lift">
           <h3 className="text-3xl font-bold mb-6 text-orange">
             A Global Freelancing Powerhouse - Ready for Stability
           </h3>
@@ -72,19 +80,23 @@ export default function Home() {
             transforming top freelancers into reliable, long‑term remote team members for 
             international companies and private clients.
           </p>
-        </div>
+          </div>
+        </MotionSection>
       </section>
 
       {/* What We Do Section */}
       <section id="services" className="px-6 py-20 bg-gradient-to-b from-black to-zinc-900">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center">
-            What We Do
-          </h2>
+          <MotionSection animation="fade">
+            <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center">
+              What We Do
+            </h2>
+          </MotionSection>
           
-          <div className="grid md:grid-cols-2 gap-8 mb-8">
+          <MotionStagger className="grid md:grid-cols-2 gap-8 mb-8">
             {/* Service 1 */}
-            <div className="frost rounded-2xl p-8 hover-lift">
+            <MotionStaggerItem className="h-full">
+            <div className="frost rounded-2xl p-8 hover-lift h-full flex flex-col">
               <h3 className="text-2xl font-bold mb-4 text-orange">
                 Offshore Recruitment & Long‑Term Placements (B2B)
               </h3>
@@ -126,9 +138,11 @@ export default function Home() {
                 You get committed team members - not short‑term freelancers.
               </p>
             </div>
+            </MotionStaggerItem>
 
             {/* Service 2 */}
-            <div className="frost rounded-2xl p-8 hover-lift">
+            <MotionStaggerItem className="h-full">
+            <div className="frost rounded-2xl p-8 hover-lift h-full flex flex-col">
               <h3 className="text-2xl font-bold mb-4 text-orange">
                 Managed Freelance & Project Talent (B2B & B2C)
               </h3>
@@ -170,9 +184,11 @@ export default function Home() {
                 No open marketplaces. No guesswork. Just reliable results.
               </p>
             </div>
+            </MotionStaggerItem>
 
             {/* Service 3 */}
-            <div className="frost rounded-2xl p-8 hover-lift">
+            <MotionStaggerItem className="h-full">
+            <div className="frost rounded-2xl p-8 hover-lift h-full flex flex-col">
               <h3 className="text-2xl font-bold mb-4 text-orange">
                 Dedicated Offshore Teams (B2B)
               </h3>
@@ -202,9 +218,11 @@ export default function Home() {
                 Perfect for startups, agencies, and SMEs looking to scale efficiently.
               </p>
             </div>
+            </MotionStaggerItem>
 
             {/* Service 4 */}
-            <div className="frost rounded-2xl p-8 hover-lift">
+            <MotionStaggerItem className="h-full">
+            <div className="frost rounded-2xl p-8 hover-lift h-full flex flex-col">
               <h3 className="text-2xl font-bold mb-4 text-orange">
                 Talent Placement for Professionals (B2C)
               </h3>
@@ -235,55 +253,71 @@ export default function Home() {
                 Our goal is to create sustainable careers, not temporary gigs.
               </p>
             </div>
-          </div>
+            </MotionStaggerItem>
+          </MotionStagger>
         </div>
       </section>
 
       {/* How It Works Section */}
       <section id="how-it-works" className="px-6 py-20 max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center">
-          How It Works
-        </h2>
+        <MotionSection animation="fade">
+          <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center">
+            How It Works
+          </h2>
+        </MotionSection>
         
-        <div className="grid md:grid-cols-5 gap-6">
-          <div className="frost rounded-2xl p-6 text-center hover-lift">
-            <div className="text-4xl font-bold text-orange mb-4">1</div>
-            <h3 className="text-xl font-bold mb-3">Discover</h3>
-            <p>We understand your needs, goals, and budget</p>
-          </div>
-          <div className="frost rounded-2xl p-6 text-center hover-lift">
-            <div className="text-4xl font-bold text-orange mb-4">2</div>
-            <h3 className="text-xl font-bold mb-3">Match</h3>
-            <p>We source and vet the best‑fit talent</p>
-          </div>
-          <div className="frost rounded-2xl p-6 text-center hover-lift">
-            <div className="text-4xl font-bold text-orange mb-4">3</div>
-            <h3 className="text-xl font-bold mb-3">Interview</h3>
-            <p>You choose your ideal candidate</p>
-          </div>
-          <div className="frost rounded-2xl p-6 text-center hover-lift">
-            <div className="text-4xl font-bold text-orange mb-4">4</div>
-            <h3 className="text-xl font-bold mb-3">Onboard</h3>
-            <p>We handle contracts, payroll, and setup</p>
-          </div>
-          <div className="frost rounded-2xl p-6 text-center hover-lift">
-            <div className="text-4xl font-bold text-orange mb-4">5</div>
-            <h3 className="text-xl font-bold mb-3">Support</h3>
-            <p>Ongoing management and performance support</p>
-          </div>
-        </div>
+        <MotionStagger className="grid md:grid-cols-5 gap-6">
+          <MotionStaggerItem className="h-full">
+            <div className="frost rounded-2xl p-6 text-center hover-lift h-full flex flex-col">
+              <div className="text-4xl font-bold text-orange mb-4">1</div>
+              <h3 className="text-xl font-bold mb-3">Discover</h3>
+              <p>We understand your needs, goals, and budget</p>
+            </div>
+          </MotionStaggerItem>
+          <MotionStaggerItem className="h-full">
+            <div className="frost rounded-2xl p-6 text-center hover-lift h-full flex flex-col">
+              <div className="text-4xl font-bold text-orange mb-4">2</div>
+              <h3 className="text-xl font-bold mb-3">Match</h3>
+              <p>We source and vet the best‑fit talent</p>
+            </div>
+          </MotionStaggerItem>
+          <MotionStaggerItem className="h-full">
+            <div className="frost rounded-2xl p-6 text-center hover-lift h-full flex flex-col">
+              <div className="text-4xl font-bold text-orange mb-4">3</div>
+              <h3 className="text-xl font-bold mb-3">Interview</h3>
+              <p>You choose your ideal candidate</p>
+            </div>
+          </MotionStaggerItem>
+          <MotionStaggerItem className="h-full">
+            <div className="frost rounded-2xl p-6 text-center hover-lift h-full flex flex-col">
+              <div className="text-4xl font-bold text-orange mb-4">4</div>
+              <h3 className="text-xl font-bold mb-3">Onboard</h3>
+              <p>We handle contracts, payroll, and setup</p>
+            </div>
+          </MotionStaggerItem>
+          <MotionStaggerItem className="h-full">
+            <div className="frost rounded-2xl p-6 text-center hover-lift h-full flex flex-col">
+              <div className="text-4xl font-bold text-orange mb-4">5</div>
+              <h3 className="text-xl font-bold mb-3">Support</h3>
+              <p>Ongoing management and performance support</p>
+            </div>
+          </MotionStaggerItem>
+        </MotionStagger>
       </section>
 
       {/* Why taskopedia Section */}
       <section className="px-6 py-20 bg-gradient-to-b from-black to-zinc-900">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center">
-            Why taskopedia?
-          </h2>
+          <MotionSection animation="fade">
+            <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center">
+              Why taskopedia?
+            </h2>
+          </MotionSection>
           
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="frost rounded-2xl p-8 hover-lift">
-              <h3 className="text-3xl font-bold mb-6 text-orange">For Businesses</h3>
+          <MotionStagger className="grid md:grid-cols-2 gap-8">
+            <MotionStaggerItem className="h-full">
+              <div className="frost rounded-2xl p-8 hover-lift h-full flex flex-col">
+                <h3 className="text-3xl font-bold mb-6 text-orange">For Businesses</h3>
               <ul className="space-y-4 text-lg">
                 <li className="flex items-start">
                   <span className="text-orange mr-3 text-2xl">✓</span>
@@ -302,10 +336,12 @@ export default function Home() {
                   Low‑risk offshore staffing
                 </li>
               </ul>
-            </div>
+              </div>
+            </MotionStaggerItem>
             
-            <div className="frost rounded-2xl p-8 hover-lift">
-              <h3 className="text-3xl font-bold mb-6 text-orange">For Professionals</h3>
+            <MotionStaggerItem className="h-full">
+              <div className="frost rounded-2xl p-8 hover-lift h-full flex flex-col">
+                <h3 className="text-3xl font-bold mb-6 text-orange">For Professionals</h3>
               <ul className="space-y-4 text-lg">
                 <li className="flex items-start">
                   <span className="text-orange mr-3 text-2xl">✓</span>
@@ -324,15 +360,19 @@ export default function Home() {
                   Meaningful international work
                 </li>
               </ul>
-            </div>
-          </div>
+              </div>
+            </MotionStaggerItem>
+          </MotionStagger>
         </div>
       </section>
 
       {/* Vision Section */}
       <section className="px-6 py-20 max-w-4xl mx-auto text-center">
-        <h2 className="text-4xl md:text-5xl font-bold mb-8">Our Vision</h2>
-        <div className="frost rounded-2xl p-12 hover-lift">
+        <MotionSection animation="fade">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8">Our Vision</h2>
+        </MotionSection>
+        <MotionSection animation="scale">
+          <div className="frost rounded-2xl p-12 hover-lift">
           <p className="text-xl md:text-2xl leading-relaxed mb-6">
             At <span className="text-orange font-bold">taskopedia.com</span>, we believe the future of work is global.
           </p>
@@ -340,18 +380,22 @@ export default function Home() {
             By connecting Bangladesh&apos;s immense talent pool with international opportunities, 
             we create long‑term value for businesses and life‑changing careers for professionals.
           </p>
-        </div>
+          </div>
+        </MotionSection>
       </section>
 
       {/* Pricing Section */}
       <section id="pricing" className="px-6 py-20 bg-gradient-to-b from-black to-zinc-900">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-center">Pricing</h2>
-          <p className="text-2xl text-center mb-16 text-orange">Simple, Transparent Pricing</p>
+          <MotionSection animation="fade">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-center">Pricing</h2>
+            <p className="text-2xl text-center mb-16 text-orange">Simple, Transparent Pricing</p>
+          </MotionSection>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <MotionStagger className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Long-Term Full-Time */}
-            <div className="frost rounded-2xl p-8 hover:border-orange transition-all hover-lift">
+            <MotionStaggerItem className="h-full">
+              <div className="frost rounded-2xl p-8 hover:border-orange transition-all hover-lift h-full flex flex-col">
               <h3 className="text-2xl font-bold mb-4 text-orange">Full-Time Professional</h3>
               <p className="text-sm mb-4 text-gray-400">Long-Term Remote Placements (B2B)</p>
               <div className="text-3xl font-bold mb-6">$800 – $1,500<span className="text-lg text-gray-400">/month</span></div>
@@ -382,10 +426,12 @@ export default function Home() {
                 </li>
               </ul>
               <p className="text-sm text-gray-400">Final pricing depends on role seniority and experience.</p>
-            </div>
+              </div>
+            </MotionStaggerItem>
 
             {/* Part-Time */}
-            <div className="frost rounded-2xl p-8 hover:border-orange transition-all hover-lift">
+            <MotionStaggerItem className="h-full">
+              <div className="frost rounded-2xl p-8 hover:border-orange transition-all hover-lift h-full flex flex-col">
               <h3 className="text-2xl font-bold mb-4 text-orange">Part-Time Professional</h3>
               <p className="text-sm mb-4 text-gray-400">Long-Term Remote Placements (B2B)</p>
               <div className="text-3xl font-bold mb-6">$400 – $800<span className="text-lg text-gray-400">/month</span></div>
@@ -399,10 +445,12 @@ export default function Home() {
                   Same vetting and support as full-time placements
                 </li>
               </ul>
-            </div>
+              </div>
+            </MotionStaggerItem>
 
             {/* Hourly Projects */}
-            <div className="frost rounded-2xl p-8 hover:border-orange transition-all hover-lift">
+            <MotionStaggerItem className="h-full">
+              <div className="frost rounded-2xl p-8 hover:border-orange transition-all hover-lift h-full flex flex-col">
               <h3 className="text-2xl font-bold mb-4 text-orange">Hourly Projects</h3>
               <p className="text-sm mb-4 text-gray-400">Managed Freelance & Project Work (B2B & B2C)</p>
               <div className="text-3xl font-bold mb-6">$8 – $15<span className="text-lg text-gray-400">/hour</span></div>
@@ -424,10 +472,12 @@ export default function Home() {
                   Replacement if required
                 </li>
               </ul>
-            </div>
+              </div>
+            </MotionStaggerItem>
 
             {/* Fixed-Price */}
-            <div className="frost rounded-2xl p-8 hover:border-orange transition-all hover-lift">
+            <MotionStaggerItem className="h-full">
+              <div className="frost rounded-2xl p-8 hover:border-orange transition-all hover-lift h-full flex flex-col">
               <h3 className="text-2xl font-bold mb-4 text-orange">Fixed-Price Projects</h3>
               <p className="text-sm mb-4 text-gray-400">Managed Freelance & Project Work (B2B & B2C)</p>
               <div className="text-3xl font-bold mb-6">Custom<span className="text-lg text-gray-400"> pricing</span></div>
@@ -453,10 +503,12 @@ export default function Home() {
                   Replacement if required
                 </li>
               </ul>
-            </div>
+              </div>
+            </MotionStaggerItem>
 
             {/* Team Packages */}
-            <div className="frost rounded-2xl p-8 hover:border-orange transition-all hover-lift">
+            <MotionStaggerItem className="h-full">
+              <div className="frost rounded-2xl p-8 hover:border-orange transition-all hover-lift h-full flex flex-col">
               <h3 className="text-2xl font-bold mb-4 text-orange">Team Packages</h3>
               <p className="text-sm mb-4 text-gray-400">Dedicated Offshore Teams (B2B)</p>
               <div className="text-3xl font-bold mb-6">From $3,000<span className="text-lg text-gray-400">/month</span></div>
@@ -478,10 +530,12 @@ export default function Home() {
                   Centralised communication & reporting
                 </li>
               </ul>
-            </div>
+              </div>
+            </MotionStaggerItem>
 
             {/* Career Placement */}
-            <div className="frost rounded-2xl p-8 hover:border-orange transition-all hover-lift">
+            <MotionStaggerItem className="h-full">
+              <div className="frost rounded-2xl p-8 hover:border-orange transition-all hover-lift h-full flex flex-col">
               <h3 className="text-2xl font-bold mb-4 text-orange">Career Placement</h3>
               <p className="text-sm mb-4 text-gray-400">Talent Placement for Professionals (B2C)</p>
               <div className="text-3xl font-bold mb-6">Success-based<span className="text-lg text-gray-400"> or fixed-fee</span></div>
@@ -503,10 +557,12 @@ export default function Home() {
                   Contract guidance
                 </li>
               </ul>
-            </div>
-          </div>
+              </div>
+            </MotionStaggerItem>
+          </MotionStagger>
 
-          <div className="frost rounded-2xl p-8 mt-12 text-center hover-lift">
+          <MotionSection animation="scale">
+            <div className="frost rounded-2xl p-8 mt-12 text-center hover-lift">
             <h3 className="text-2xl font-bold mb-6">Why Our Pricing Works</h3>
             <div className="grid md:grid-cols-4 gap-6">
               <div>
@@ -526,27 +582,32 @@ export default function Home() {
                 <p className="font-semibold">Flexible scaling</p>
               </div>
             </div>
-          </div>
+            </div>
+          </MotionSection>
         </div>
       </section>
 
       {/* CTA Section */}
       <section id="contact" className="px-6 py-20 max-w-4xl mx-auto text-center">
-        <h2 className="text-4xl md:text-5xl font-bold mb-8">Get Started</h2>
-        <p className="text-xl mb-12 leading-relaxed">
-          Whether you&apos;re a company looking to scale or a professional seeking global opportunities, 
-          taskopedia is your trusted partner.
-        </p>
-        <a 
-          href="#" 
-          className="inline-block frost px-10 py-5 rounded-lg text-orange hover:bg-orange hover:text-black transition-all duration-300 font-semibold text-xl mb-4"
-        >
-          Book a Discovery Call Today
-        </a>
-        <p className="text-gray-400 text-sm">(Calendly link coming soon)</p>
-        <p className="text-2xl font-bold text-orange mt-12">
-          Build your global team today.
-        </p>
+        <MotionSection animation="fade">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8">Get Started</h2>
+          <p className="text-xl mb-12 leading-relaxed">
+            Whether you&apos;re a company looking to scale or a professional seeking global opportunities, 
+            taskopedia is your trusted partner.
+          </p>
+        </MotionSection>
+        <MotionSection animation="scale">
+          <a 
+            href="#" 
+            className="inline-block frost px-10 py-5 rounded-lg text-orange hover:bg-orange hover:text-black transition-all duration-300 font-semibold text-xl mb-4"
+          >
+            Book a Discovery Call Today
+          </a>
+          <p className="text-gray-400 text-sm">(Calendly link coming soon)</p>
+          <p className="text-2xl font-bold text-orange mt-12">
+            Build your global team today.
+          </p>
+        </MotionSection>
       </section>
 
       <Footer />

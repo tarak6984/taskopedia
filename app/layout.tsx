@@ -22,7 +22,9 @@ export const metadata: Metadata = {
   title: "taskopedia - Global Talent Solutions Powered by Bangladesh",
   description: "Hire world-class remote talent from Bangladesh. Access highly skilled, English-speaking professionals for long-term offshore placements, managed freelance work, and dedicated teams.",
   icons: {
-    icon: "/logo.png",
+    icon: [
+      { url: "/logo.png", type: "image/png" }
+    ],
     shortcut: "/logo.png",
     apple: "/logo.png",
   },
