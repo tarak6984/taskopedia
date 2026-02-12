@@ -148,7 +148,7 @@ export default function Footer() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <p>&copy; {currentYear} taskopedia.com - All rights reserved</p>
+          <p>&copy; {currentYear} Taskopedia.com - All rights reserved</p>
         </motion.div>
       </div>
     </footer>

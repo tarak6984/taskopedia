@@ -19,7 +19,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "taskopedia - Global Talent Solutions Powered by Bangladesh",
+  title: "Taskopedia - Global Talent Solutions Powered by Bangladesh",
   description: "Hire world-class remote talent from Bangladesh. Access highly skilled, English-speaking professionals for long-term offshore placements, managed freelance work, and dedicated teams.",
   icons: {
     icon: [
@@ -29,16 +29,16 @@ export const metadata: Metadata = {
     apple: "/logo.png",
   },
   openGraph: {
-    title: "taskopedia - Global Talent Solutions Powered by Bangladesh",
+    title: "Taskopedia - Global Talent Solutions Powered by Bangladesh",
     description: "Hire world-class remote talent from Bangladesh. Access highly skilled, English-speaking professionals for long-term offshore placements, managed freelance work, and dedicated teams.",
     url: "https://taskopedia.com",
-    siteName: "taskopedia",
+    siteName: "Taskopedia",
     images: [
       {
         url: "/logo.png",
         width: 1200,
         height: 630,
-        alt: "taskopedia - Talent for every task",
+        alt: "Taskopedia - Talent for every task",
       },
     ],
     locale: "en_US",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "taskopedia - Global Talent Solutions Powered by Bangladesh",
+    title: "Taskopedia - Global Talent Solutions Powered by Bangladesh",
     description: "Hire world-class remote talent from Bangladesh. Access highly skilled, English-speaking professionals for long-term offshore placements, managed freelance work, and dedicated teams.",
     images: ["/logo.png"],
   },

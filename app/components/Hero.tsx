@@ -30,7 +30,7 @@ export default function Hero() {
           initial={{ opacity: 1, y: 0 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          taskopedia connects international businesses and individuals with highly skilled, 
+          Taskopedia connects international businesses and individuals with highly skilled, 
           English‑speaking professionals from Bangladesh - offering a smarter alternative to 
           traditional freelancing platforms.
         </motion.p>

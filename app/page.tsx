@@ -76,7 +76,7 @@ export default function Home() {
             </li>
           </ul>
           <p className="text-lg leading-relaxed">
-            <span className="font-semibold text-orange">taskopedia</span> bridges this gap by 
+            <span className="font-semibold text-orange">Taskopedia</span> bridges this gap by 
             transforming top freelancers into reliable, long‑term remote team members for 
             international companies and private clients.
           </p>
@@ -193,7 +193,7 @@ export default function Home() {
                 Dedicated Offshore Teams (B2B)
               </h3>
               <p className="text-lg mb-6 leading-relaxed">
-                For fast‑growing companies, taskopedia builds and manages entire offshore teams in Bangladesh.
+                For fast‑growing companies, Taskopedia builds and manages entire offshore teams in Bangladesh.
               </p>
               <p className="font-semibold mb-3">What we provide:</p>
               <ul className="space-y-2 mb-6">
@@ -305,12 +305,12 @@ export default function Home() {
         </MotionStagger>
       </section>
 
-      {/* Why taskopedia Section */}
+      {/* Why Taskopedia Section */}
       <section className="px-6 py-20 bg-gradient-to-b from-black to-zinc-900">
         <div className="max-w-6xl mx-auto">
           <MotionSection animation="fade">
             <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center">
-              Why taskopedia?
+              Why Taskopedia?
             </h2>
           </MotionSection>
           
@@ -374,7 +374,7 @@ export default function Home() {
         <MotionSection animation="scale">
           <div className="frost rounded-2xl p-12 hover-lift">
           <p className="text-xl md:text-2xl leading-relaxed mb-6">
-            At <span className="text-orange font-bold">taskopedia.com</span>, we believe the future of work is global.
+            At <span className="text-orange font-bold">Taskopedia.com</span>, we believe the future of work is global.
           </p>
           <p className="text-lg md:text-xl leading-relaxed">
             By connecting Bangladesh&apos;s immense talent pool with international opportunities, 
@@ -593,7 +593,7 @@ export default function Home() {
           <h2 className="text-4xl md:text-5xl font-bold mb-8">Get Started</h2>
           <p className="text-xl mb-12 leading-relaxed">
             Whether you&apos;re a company looking to scale or a professional seeking global opportunities, 
-            taskopedia is your trusted partner.
+            Taskopedia is your trusted partner.
           </p>
         </MotionSection>
         <MotionSection animation="scale">
